@@ -22,6 +22,11 @@ const usersRouter = require('./dao/users');
 
 app.use('/users', usersRouter);
 
+
+const deliveriesRouter = require('./dao/deliveries');
+
+app.use('/deliveries', deliveriesRouter);
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
