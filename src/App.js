@@ -11,6 +11,7 @@ import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
 import Header from "./components/header.component";
 import Footer from "./components/footer.component";
+import CreateDelivery from "./components/create-delivery.component";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
     <Route path="/edit/:id"  component={EditExercise} />
     <Route path="/create"  component={CreateExercise} />
     <Route path="/user"  component={CreateUser} />
+    <Route path="/createDelivery"  component={CreateDelivery} />
     <Footer/>
   </Router>
   );
