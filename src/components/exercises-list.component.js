@@ -1,9 +1,14 @@
 import React, {Component} from 'react'
+import Header from "./header.component";
+import Footer from "./footer.component";
 
 export  default class ExercisesList extends Component {
+   
     render() {
         return (
-            <div>
+            
+            <div> 
+                <Header/>
                 <p> ExercisesList ena </p>
                 <form > 
                     <fieldset>
@@ -27,6 +32,7 @@ export  default class ExercisesList extends Component {
                     <textarea rows="10" ></textarea>
                     </fieldset>
                 </form>
+                <Footer/>
             </div>
         )
     }

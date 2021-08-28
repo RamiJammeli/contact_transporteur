@@ -15,6 +15,8 @@ router.route('/add').post((req, res) => {
   const discriminator = req.body.discriminator;
   const password = req.body.password;
   const adresse = req.body.adresse;
+  const mail = req.body.mail;
+
 
   const newUser = new User({
     username,
@@ -23,7 +25,8 @@ router.route('/add').post((req, res) => {
     dateNaissance,
     discriminator,
     password,
-    adresse
+    adresse,
+    mail,
   });
 
   newUser.save()
@@ -38,11 +41,19 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/deleteall/').delete((req, res) => {
+  User.remove()
+    .then(() => res.json('User deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/:id').delete((req, res) => {
   User.findByIdAndDelete(req.params.id)
     .then(() => res.json('User deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+
 
 router.route('/update/:id').post((req, res) => {
   User.findById(req.params.id)
@@ -54,6 +65,8 @@ router.route('/update/:id').post((req, res) => {
       user.discriminator = req.body.discriminator;
       user.password = req.body.password;
       user.adresse = req.body.adresse;
+      user.mail = req.body.mail;
+
  
       user.save()
         .then(() => res.json('User updated!'))

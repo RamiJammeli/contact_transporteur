@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 
 import React from 'react';
 
@@ -9,20 +9,24 @@ import ExercisesList from "./components/exercises-list.component";
 import EditExercise from "./components/edit-exercise.component";
 import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
-import Header from "./components/header.component";
-import Footer from "./components/footer.component";
+import Register from "./components/register.component";
+import Login from "./components/login.component";
+
 
 function App() {
   return (
     <Router>
 
-    <Header />
-    <br/>
+    
+    
     <Route path="/" exact component={ExercisesList} />
     <Route path="/edit/:id"  component={EditExercise} />
     <Route path="/create"  component={CreateExercise} />
     <Route path="/user"  component={CreateUser} />
-    <Footer/>
+    <Route path="/register"  component={Register} />
+    <Route path="/login"  component={Login} />
+
+    
   </Router>
   );
 }
