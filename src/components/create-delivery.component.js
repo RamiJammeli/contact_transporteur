@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-
+import Header from "./header.component";
+import Footer from "./footer.component";
 
 export  default class CreateDelivery extends Component {
     constructor(props) {
@@ -100,6 +101,8 @@ export  default class CreateDelivery extends Component {
     render() {
       return (
         <div>
+          <Header/>
+        <div>
           <h3>Créer une livraison</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group"> 
@@ -163,6 +166,8 @@ export  default class CreateDelivery extends Component {
               <input type="submit" value="Valider" className="btn btn-primary" />
             </div>
           </form>
+        </div>
+        <Footer/>
         </div>
         )
       }

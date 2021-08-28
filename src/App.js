@@ -13,6 +13,7 @@ import CreateUser from "./components/create-user.component";
 import Header from "./components/header.component";
 import Footer from "./components/footer.component";
 import CreateDelivery from "./components/create-delivery.component";
+import Getdeliveries from "./components/front-getalldeliveries.component";
 
 import Register from "./components/register.component";
 import Login from "./components/login.component";
@@ -31,6 +32,7 @@ function App() {
     <Route path="/user"  component={CreateUser} />
 
     <Route path="/createDelivery"  component={CreateDelivery} />
+    <Route path="/MyDeliveries"  component={Getdeliveries} />
     
 
     <Route path="/register"  component={Register} />
