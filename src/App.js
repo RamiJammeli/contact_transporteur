@@ -14,6 +14,8 @@ import Getdeliveries from "./components/front-getalldeliveries.component";
 import Register from "./components/register.component";
 import Login from "./components/login.component";
 import IndexFront from "./components/front_index.component";
+import FrontAbout from "./components/front-aboutus.component";
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
  
     <Route path="/createDelivery"  component={CreateDelivery} />
     <Route path="/MyDeliveries"  component={Getdeliveries} />
+    <Route path="/About"  component={FrontAbout} />
     
 
     <Route path="/register"  component={Register} />

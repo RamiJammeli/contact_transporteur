@@ -379,7 +379,7 @@ body {
     outline: none;
     box-shadow: none
 }
-
+/*
 .btn-primary {
     border-color: #333;
     border-radius: 0;
@@ -398,7 +398,7 @@ body {
     border-bottom: 3px solid;
     font-size: 13px;
 }
-
+*/
 .btn-primary.btn-transparent {
     border-color: transparent!important
 }
@@ -1651,7 +1651,7 @@ footer.white-wrapper .social-links li a {
 
 /*  16 - FORM CONTROL
 /*-----------------------------------------------------------------------------------*/
-
+/*
 .form-control {
     display: block;
     width: 100%;
@@ -1731,14 +1731,14 @@ footer.white-wrapper .social-links li a {
 }
 
 .form-control:-moz-placeholder {
-    /* Firefox 18- */
+    
     color: #444;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .form-control::-moz-placeholder {
-    /* Firefox 19+ */
+    
     color: #444;
     font-weight: 700;
     text-transform: uppercase;
@@ -1758,14 +1758,14 @@ footer.white-wrapper .social-links li a {
 }
 
 .dark-wrapper .form-control:-moz-placeholder {
-    /* Firefox 18- */
+    
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .dark-wrapper .form-control::-moz-placeholder {
-    /* Firefox 19+ */
+    
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -1804,7 +1804,7 @@ footer.white-wrapper .social-links li a {
     background-color: #edeff0;
 }
 
-
+*/
 /*-----------------------------------------------------------------------------------*/
 
 
@@ -2435,4 +2435,91 @@ footer.white-wrapper .social-links li a {
 
 .demo-selector .masonry-portfolio-item {
     margin-bottom: 30px;
+}
+
+/* About */
+.why-us h2 {
+    position: relative;
+    margin-bottom: 35px;
+}
+.why-us h2::after {
+    content: "";
+    width: 120px;
+    height: 3px;
+    display: inline-block;
+    background: #FFC107;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -20px;
+    margin: 0 auto;
+}
+
+.why-us .box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.10);
+    transition: 0.5s;
+    position: relative;
+    background-color: #333;
+    max-height: 230px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.why-us .box:hover {
+	padding: 30px 30px 70px 30px;
+	box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.20);
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.why-us .box img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: -1;
+	opacity: 0;
+	transition:all ease 1s; 
+}
+.why-us .box:hover img {
+	opacity: 1;
+}
+.why-us .box span {
+    display: block;
+    font-size: 56px;
+    font-weight: 700;
+    color: #6b6060;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    line-height: normal;
+}
+.why-us .box h4 a {
+	font-size: 24px;
+	font-weight: 600;
+	padding: 0;
+	margin: 20px 0;
+	color: #dadada;
+	text-decoration: none;
+}
+.why-us .box p {
+	color: #aaaaaa;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+}
+.why-us .box:hover span,
+.why-us .box:hover h4 a,
+.why-us .box:hover p {
+  	color: #fff;
+}
+
+/**/
+.card-elee{
+    width: 25rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+.cardimg{
+    width: 100%;
 }
