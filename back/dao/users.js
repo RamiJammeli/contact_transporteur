@@ -7,6 +7,19 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/getByUserName/:username').get((req, res) => {
+  User.findOne({username:req.params.username})
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/getByUserNamePassword/:username/:password').get((req, res) => {
+  User.findOne({username:req.params.username})
+  .findOne({password:req.params.password})
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/add').post((req, res) => {
   const username = req.body.username;
   const nom = req.body.nom;

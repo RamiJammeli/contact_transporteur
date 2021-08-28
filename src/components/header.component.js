@@ -251,10 +251,10 @@ export  default class Header extends Component {
                                 </ul>
                             </li>
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Shop <span className="pe-7s-angle-down"></span></a>
+                                <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Connexion <span className="pe-7s-angle-down"></span></a>
                                 <ul className="dropdown-menu" role="menu">
-                                    <li><Link to="/register">Inscription</Link></li>
-                                    <li><Link to="/login">Connexion</Link></li>
+                                    <li><Link to="/register">Sign Up</Link></li>
+                                    <li><Link to="/login">Sign In</Link></li>
                                 </ul>
                             </li>
                             <li><a href="#search"><i className="pe-7s-search"></i></a></li>
