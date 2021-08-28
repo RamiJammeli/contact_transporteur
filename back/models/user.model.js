@@ -10,6 +10,7 @@ const userSchema = new Schema({
   discriminator: {type: String, default:'Client'},
   password: {type: String,required: true, minlength: 6},
   adresse: {type: String},
+  mail: {type: String},
 }, {
   timestamps: true,
 });

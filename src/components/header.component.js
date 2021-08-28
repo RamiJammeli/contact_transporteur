@@ -1,10 +1,15 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from "react-router-dom";
-
+import $ from 'jquery';
 
 
 export  default class Header extends Component {
+    componentDidMount() {
+        $("#styleSign").attr("disabled", "disabled");
+        $("#styleLogin").attr("disabled", "disabled");
+
+      }
     render() {
         return (
             <div>
@@ -248,8 +253,8 @@ export  default class Header extends Component {
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Shop <span className="pe-7s-angle-down"></span></a>
                                 <ul className="dropdown-menu" role="menu">
-                                    <li><a href="index-shop.html">Home Shop</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><Link to="/register">Inscription</Link></li>
+                                    <li><Link to="/login">Connexion</Link></li>
                                 </ul>
                             </li>
                             <li><a href="#search"><i className="pe-7s-search"></i></a></li>
