@@ -3,6 +3,7 @@ import $ from 'jquery';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from 'react-router-dom';
 export  default class Register extends Component {
   constructor(props) {
     super(props);
@@ -66,7 +67,12 @@ export  default class Register extends Component {
       mail: e.target.value
     })
   }
-
+   refreshPage(){ 
+    setTimeout(()=>{
+      window.location.reload(false);
+  }, 500);
+  console.log('page to reload')
+}
   onSubmit(e) {
     e.preventDefault();
 
@@ -103,7 +109,7 @@ export  default class Register extends Component {
     render() {
         return (
             <div className="main-content">
-          
+          <Link onClick={ this.refreshPage } to="/" style={{fontSize:15}}>Accueil</Link>
             <div className="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
               <div className="container">
                 <div className="header-body text-center mb-7">

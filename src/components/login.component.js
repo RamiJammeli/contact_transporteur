@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import $ from 'jquery'
 import loginimqge from '../../src/login.png'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 export  default class Login extends Component {
    
     constructor(props) {
@@ -20,6 +22,13 @@ export  default class Login extends Component {
         }
         
       }
+
+      refreshPage(){ 
+        setTimeout(()=>{
+          window.location.reload(false);
+      }, 500);
+      console.log('page to reload')
+    }
 
       onChangeUsername(e){
           this.setState({
@@ -74,7 +83,11 @@ console.log('http://localhost:5000/users/getByUsername/'+e.target.value);
       }
     render() {
         return (
+          <div>
+            <Link to="/" onClick={this.refreshPage} style={{fontSize:15}}>Accueil</Link>
+          
             <div className="wrapper fadeInDown">
+              
             <div id="formContent">
              
               <div className="fadeIn first">
@@ -102,6 +115,7 @@ console.log('http://localhost:5000/users/getByUsername/'+e.target.value);
               </div>
           
             </div>
+          </div>
           </div>
         )
     }

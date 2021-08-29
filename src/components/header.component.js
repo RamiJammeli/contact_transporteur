@@ -10,6 +10,13 @@ export  default class Header extends Component {
         $("#styleLogin").attr("disabled", "disabled");
 
       }
+      refreshPage(){ 
+        setTimeout(()=>{
+          window.location.reload(false);
+      }, 200);
+      console.log('page to reload')
+    }
+      
     render() {
         return (
             <div>
@@ -37,7 +44,7 @@ export  default class Header extends Component {
                                     <a href="#"><i className="fa fa-dribbble"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i className="fa fa-facebook"></i></a>
+                                    <a href="http://www.facebook.com"><i className="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
                                     <a href="#"><i className="fa fa-behance"></i></a>
@@ -76,54 +83,12 @@ export  default class Header extends Component {
 
                     <div className="collapse navbar-collapse" id="main-navigation">
                         <ul className="nav navbar-nav navbar-right">
-                            <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown">Home <span className="pe-7s-angle-down"></span></a>
-                                <ul className="dropdown-menu">
-                                    <li className="dropdown-submenu">
-                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Home - Agency</a>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="index-agency-1.html">Agency - Layout 1</a></li>
-                                            <li><a href="index-agency-2.html">Agency - Layout 2</a></li>
-                                            <li><a href="index-agency-3.html">Agency - Layout 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-submenu">
-                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Home - Portfolio</a>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="index-portfolio-1.html">Portfolio - Layout 1</a></li>
-                                            <li><a href="index-portfolio-2.html">Portfolio - Layout 2</a></li>
-    
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-submenu">
-                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Home - Corporate</a>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="index-corporate-1.html">Corporate - Layout 1</a></li>
-                                            <li><a href="index-corporate-2.html">Corporate - Layout 2</a></li>
-                                            <li><a href="index-corporate-3.html">Corporate - Layout 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-submenu">
-                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Home - Landing Page</a>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="index-landing-1.html">Landing Page - Layout 1</a></li>
-                                            <li><a href="index-landing-2.html">Landing Page - Layout 2</a></li>
-    
-                                        </ul>
-                                    </li>
-                                    <li className="dropdown-submenu">
-                                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Home - Blog</a>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="index-blog-1.html">Blog - Layout 1</a></li>
-                                            <li><a href="index-blog-2.html">Blog - Layout 2</a></li>
-                                            <li><a href="index-blog-3.html">Blog - Layout 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="index-app.html">Home - App</a></li>
-                                    <li><a href="index-restaurant.html">Home - Restaurant</a></li>
+                        <li className="dropdown">
+                                <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Vagrok <span className="pe-7s-angle-down"></span></a>
+                                <ul className="dropdown-menu" role="menu">
+                                    <li><Link onClick={ this.refreshPage }  to="/">Accueil</Link></li>
+                                    <li><Link onClick={ this.refreshPage }  to="/About">About Us</Link></li>
                                     
-                                    <li><a href="index-minimal.html">Home - Minimal</a></li>
-                                    <li><a href="index-countdown.html">Home - Coming Soon</a></li>
                                 </ul>
                             </li>
                             <li className="dropdown">
@@ -253,8 +218,8 @@ export  default class Header extends Component {
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Connexion <span className="pe-7s-angle-down"></span></a>
                                 <ul className="dropdown-menu" role="menu">
-                                    <li><Link to="/register">Sign Up</Link></li>
-                                    <li><Link to="/login">Sign In</Link></li>
+                                    <li><Link onClick={this.refreshPage} to="/register">Sign Up</Link></li>
+                                    <li><Link onClick={this.refreshPage} to="/login">Sign In</Link></li>
                                 </ul>
                             </li>
                             <li><a href="#search"><i className="pe-7s-search"></i></a></li>
