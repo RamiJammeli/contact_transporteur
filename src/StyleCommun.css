@@ -1,0 +1,32 @@
+.separatort {
+    display: flex;
+    align-items: center;
+    text-align: center;
+     width: 280px;
+  font-family: Forte;
+  text-transform:uppercase;
+    margin-top: 15px;
+    
+    margin-left: auto;
+    margin-right: auto;
+     color: #CA300A;
+     font-size: 19px;
+  
+  }
+  
+  .separatort::before,
+  .separatort::after {
+    content: '';
+    flex: 1;
+    border-bottom: 3px solid #CA300A;
+  
+  }
+  
+  .separatort:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separatort:not(:empty)::after {
+    margin-left: .25em;
+  }
+  

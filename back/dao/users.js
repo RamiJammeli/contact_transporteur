@@ -13,6 +13,23 @@ router.route('/getByUserName/:username').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/getAdmins').get((req, res) => {
+  User.find({discriminator:"admin"})
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+router.route('/getLivreurs').get((req, res) => {
+  User.find({discriminator:"livreur"})
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/getClients').get((req, res) => {
+  User.find({discriminator:"Client"})
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/getByUserNamePassword/:username/:password').get((req, res) => {
   User.findOne({username:req.params.username})
   .findOne({password:req.params.password})

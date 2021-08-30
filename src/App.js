@@ -15,6 +15,10 @@ import Register from "./components/register.component";
 import Login from "./components/login.component";
 import IndexFront from "./components/front_index.component";
 import FrontAbout from "./components/front-aboutus.component";
+import BackUsers from "./components/back-users.component";
+import BackUserDetail from "./components/bac-users-client-detail.component";
+
+
 
 
 
@@ -33,8 +37,8 @@ function App() {
 
     <Route path="/register"  component={Register} />
     <Route path="/login"  component={Login} />
-
-    
+    <Route path="/BackUsers" component={BackUsers} />
+    <Route path="/backudetail/:username" component={BackUserDetail} />
 
   </Router>
   );
