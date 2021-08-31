@@ -85,8 +85,8 @@ router.route('/:id').delete((req, res) => {
 
 
 
-router.route('/update/:id').post((req, res) => {
-  User.findById(req.params.id)
+router.route('/update/:username').post((req, res) => {
+  User.findOne({username:req.params.username})
     .then(user => {
       user.username = req.body.username;
       user.nom = req.body.nom;
