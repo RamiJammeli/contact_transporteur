@@ -32,7 +32,7 @@ render() {
     <br/>
     <div className="rows">
    {this.state.deliveries.map((item,index)=>{
-    return ( <Card reff= {item.reference_commande} adresse={item.adresse} p1={item.prix_initial} p2={item.prix_total} date={(item.datelivraison).split('T')[0] }type={item.type_livraison}></Card> )
+    return ( <Card key={index} idd={item._id} reff= {item.reference_commande} adresse={item.adresse} p1={item.prix_initial} p2={item.prix_total} date={(item.datelivraison).split('T')[0] }type={item.type_livraison}></Card> )
    } )
   
    }

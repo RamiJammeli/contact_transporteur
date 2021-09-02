@@ -1,5 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 import img4 from '../../src/img/img4.jpg'
+import axios from 'axios'
+import { Link } from 'react-router-dom';
+
+function fRemove(id){
+
+axios.delete('http://localhost:5000/deliveries/'+id)
+.then (rd =>{alert(rd.data)});
+
+window.location.reload();
+
+return 0;
+
+}
 const card = (props)=>{
     console.log(props);
     return(
@@ -16,6 +29,11 @@ const card = (props)=>{
             <li className="list-group-item"><b>Prix Total:</b>{props.p2} </li>
             <li className="list-group-item"><b>Date Livraison:</b>{props.date}</li>
             <li className="list-group-item"><b>Type Livraison:</b>{props.type}</li>
+            <li className="list-group-item">
+            <button onClick={()=> fRemove(props.idd)} className="myListButton btn btn-info">remove </button>
+            <Link to={"/EditMyDelivery/"+props.idd} className="btn btn-info" style={{marginLeft: "10px"}} >Edit</Link>
+              </li>
+            
            
           </ul>
           
