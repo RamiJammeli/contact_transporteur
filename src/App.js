@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 
 import CreateDelivery from "./components/create-delivery.component";
 import Getdeliveries from "./components/front-getalldeliveries.component";
-
+import EditDelivery from"./components/front-editdelivery.component";
 
 import Register from "./components/register.component";
 import Login from "./components/login.component";
@@ -33,6 +33,7 @@ function App() {
  
     <Route path="/createDelivery"  component={CreateDelivery} />
     <Route path="/MyDeliveries"  component={Getdeliveries} />
+    <Route path="/EditMyDelivery/:id" component={EditDelivery} />
     <Route path="/About"  component={FrontAbout} />
     
 

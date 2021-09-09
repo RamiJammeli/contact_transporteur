@@ -78,7 +78,6 @@ export  default class CreateDelivery extends Component {
               adresse: this.state.adresse,
               prix_initial: this.state.prix_initial,
               prix_total: this.state.prix_total,
-              reference_commande: this.state.reference_commande,
               datelivraison: this.state.datelivraison,
               type_livraison:this.state.type_livraison
 
