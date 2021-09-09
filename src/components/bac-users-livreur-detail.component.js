@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import axios from 'axios';
 import $ from 'jquery'
 import styles from '../css/detailuser.css'
-import imgdelivery from '../../src/img/deliveryman.png'
+
 let ischarge=0;
 let supprimer=null;
-export default class BackUserDetail extends Component{
+export default class BackUserLivreurDetail extends Component{
 
     constructor(props) {
   
@@ -21,7 +21,6 @@ export default class BackUserDetail extends Component{
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onSubmitSupprimer=this.onSubmitSupprimer.bind(this);
-        this.onSubmitDevenirLivreur=this.onSubmitDevenirLivreur.bind(this);
 
         this.state = {
           username: '',
@@ -95,29 +94,6 @@ export default class BackUserDetail extends Component{
           adresse:this.state.adresse,
           mail:this.state.mail,
           dateNaissance: this.state.dateNaissance,
-          discriminator:'Client'
-        }
-    
-        console.log(user);
-    
-        axios.post('http://localhost:5000/users/update/'+this.state.username,user)
-          .then(res => console.log(res.data));
-    
-          alert("Client modifié")
-       
-      }
-      
-      onSubmitDevenirLivreur(e) {
-        e.preventDefault();
-    
-        const user = {
-          username: this.state.username,
-          nom:this.state.nom,
-          prenom:this.state.prenom,
-          password:this.state.password,
-          adresse:this.state.adresse,
-          mail:this.state.mail,
-          dateNaissance: this.state.dateNaissance,
           discriminator:'livreur'
         }
     
@@ -126,8 +102,7 @@ export default class BackUserDetail extends Component{
         axios.post('http://localhost:5000/users/update/'+this.state.username,user)
           .then(res => console.log(res.data));
     
-          alert(this.state.username +" est devenu livreur");
-          window.location = '/BackUsers';
+          alert("Livreur modifié")
        
       }
 
@@ -152,7 +127,7 @@ export default class BackUserDetail extends Component{
           adresse:this.state.adresse,
           mail:this.state.mail,
           dateNaissance: this.state.dateNaissance,
-          discriminator:'Client',
+          discriminator:'livreur',
           date_suppression: dt_supp
         }
     
@@ -161,9 +136,9 @@ export default class BackUserDetail extends Component{
         axios.post('http://localhost:5000/users/updateDateSuppression',user)
           .then(res => console.log(res.data));
           if(supprimer==null)
-          alert("Client activé")
+          alert("Livreur activé")
           else
-          alert("Client supprimé")
+          alert("Livreur supprimé")
       }
       
  
@@ -225,13 +200,10 @@ export default class BackUserDetail extends Component{
             </div>
             <div className="profile-userbuttons">
              
-                <input type="button" title="Activer/Supprimer Compte" className="btn btn-info  btn-sm" id="activersupprimer" onClick={this.onSubmitSupprimer} value="Supprimer" />
-                
+                <input type="button" className="btn btn-info  btn-sm" id="activersupprimer" onClick={this.onSubmitSupprimer} value="Supprimer" />
               
-                <button type="button" title="Contacter " className="btn btn-info  btn-sm">Message</button>
-                <button type="button" onClick={this.onSubmitDevenirLivreur} title="Devenir livreur" className="btn btn-info  btn-sm"><img height="15" width="15" src={imgdelivery} /> </button>
-
-
+              
+                <button type="button" className="btn btn-info  btn-sm">Message</button>
             </div>
             <div className="profile-userbuttons">
               <hr/>
