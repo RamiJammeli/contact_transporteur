@@ -32,7 +32,11 @@ const card = (props)=>{
             <li className="list-group-item">
             <button onClick={()=> fRemove(props.idd)} className="myListButton btn btn-info">remove </button>
             <Link to={"/EditMyDelivery/"+props.idd} className="btn btn-info" style={{marginLeft: "10px"}} >Edit</Link>
-              </li>
+            </li>
+
+            <li className="list-group-item">
+            <Link to={"/MyOrderStatus/"+props.idd} className="btn btn-primary" style={{width: "203px"}} >Order status</Link>
+            </li>
             
            
           </ul>

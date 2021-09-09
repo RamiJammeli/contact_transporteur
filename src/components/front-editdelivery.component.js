@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Header from "./header.component";
 import Footer from "./footer.component";
 
-export  default class CreateDelivery extends Component {
+export  default class EditDelivery extends Component {
 
     constructor(props) {
         super(props);

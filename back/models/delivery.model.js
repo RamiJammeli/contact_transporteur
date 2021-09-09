@@ -7,7 +7,7 @@ const deliverySchema = new Schema({
   reference_commande: {type: String,required: true},
   datelivraison: {type: Date,required: true},
   isvalid: {type: Boolean},
-  etat: {type: String,required: true, default: "enregistrement commande"},
+  etat: {type: String,required: true, default: "enregistrementcommande "},
   adresse: {type: String},
   prix_initial: {type: Number},
   prix_total:{type:Number},

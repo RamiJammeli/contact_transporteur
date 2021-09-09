@@ -56,7 +56,10 @@ let Delivery = require('../models/delivery.model');
     Delivery.findByIdAndDelete(req.params.id)
       .then(() => res.json('Delivery deleted.'))
       .catch(err => res.status(400).json('Error: ' + err));
-  });
+  }); 
+
+
+  
 
 
   router.route('/update').post((req, res) => {
@@ -68,7 +71,7 @@ let Delivery = require('../models/delivery.model');
         delivery.datelivraison = Date.parse(req.body.datelivraison);
         delivery.prix_total = req.body.prix_total;
         delivery.type_livraison = req.body.type_livraison;
-        
+        delivery.etat=req.body.etat;
   
    
         delivery.save()
