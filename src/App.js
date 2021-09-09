@@ -17,6 +17,7 @@ import IndexFront from "./components/front_index.component";
 import FrontAbout from "./components/front-aboutus.component";
 import BackUsers from "./components/back-users.component";
 import BackUserDetail from "./components/bac-users-client-detail.component";
+import BackUserLivreurDetail from "./components/bac-users-livreur-detail.component";
 
 
 
@@ -39,7 +40,8 @@ function App() {
     <Route path="/login"  component={Login} />
     <Route path="/BackUsers" component={BackUsers} />
     <Route path="/backudetail/:username" component={BackUserDetail} />
-
+    <Route path="/backlivreurdetail/:username" component={BackUserLivreurDetail} />
+    
   </Router>
   );
 }

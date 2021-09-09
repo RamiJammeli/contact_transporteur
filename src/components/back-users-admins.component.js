@@ -11,7 +11,7 @@ const Admins =(props)=>{
         }
     
     return(
-        <div class="col-xl-3 col-lg-3 col-md-4 px-3" style={{  textAlign: 'center'}}>
+        <div className="col-xl-3 col-lg-3 col-md-4 px-3" style={{  textAlign: 'center'}}>
         <div className="card card-elee" >
           <img className="card-img-top cardimg" src={img4} alt="Card image cap"/>
           <div className="card-body">

@@ -83,6 +83,28 @@ router.route('/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/updateDateSuppression').post((req, res) => {
+  User.findOne({username:req.body.username})
+    .then(user => {
+      user.username = req.body.username;
+      user.nom = req.body.nom;
+      user.prenom = req.body.prenom;
+      user.dateNaissance = Date.parse(req.body.dateNaissance);
+      user.discriminator = req.body.discriminator;
+      user.password = req.body.password;
+      user.adresse = req.body.adresse;
+      user.mail = req.body.mail;
+      user.date_suppression=req.body.date_suppression;
+      
+
+      
+
+      user.save()
+        .then(() => res.json('User updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 
 router.route('/update/:username').post((req, res) => {
